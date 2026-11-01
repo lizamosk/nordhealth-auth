@@ -1,0 +1,59 @@
+{
+  "name": "nord-health-assignment",
+  "type": "module",
+  "private": true,
+  "author": {
+    "name": "Liza Moskalenko",
+    "email": "limoskk.social@gmail.com"
+  },
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "nuxt typecheck",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "@nordhealth/components": "^5.4.4",
+    "@nordhealth/css": "^5.3.0",
+    "@nordhealth/fonts": "^3.0.4",
+    "@nordhealth/icons": "^3.21.0",
+    "@nordhealth/themes": "^10.0.4",
+    "@nordhealth/tokens": "^9.0.4",
+    "@nuxtjs/i18n": "^10.6.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "@vee-validate/zod": "^4.15.1",
+    "nuxt": "^4.6.3",
+    "tailwindcss": "^4.3.3",
+    "vee-validate": "^4.15.1",
+    "vue": "^3.5.44",
+    "vue-router": "^5.4.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@nuxt/eslint": "^1.17.0",
+    "@nuxt/test-utils": "^4.3.4",
+    "@playwright/test": "^1.64.1",
+    "@vue/test-utils": "^2.5.1",
+    "eslint": "^10.14.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.7",
+    "happy-dom": "^21.0.4",
+    "prettier": "^3.9.10",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.12",
+    "vue-tsc": "^3.3.14"
+  },
+  "engines": {
+    "node": "^22.21.0 || ^24.11.0 || >=26.0.0"
+  }
+}

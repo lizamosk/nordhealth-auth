@@ -1,0 +1,76 @@
+{
+  "app": {
+    "name": "Hello, NordHealth",
+    "skipToContent": "Skip to main content"
+  },
+  "theme": {
+    "toggle": "Dark theme"
+  },
+  "signUp": {
+    "pageTitle": "Create your account",
+    "heading": "Create your account",
+    "email": {
+      "label": "Email",
+      "placeholder": "name{'@'}example.com"
+    },
+    "password": {
+      "label": "Password",
+      "show": "Show password",
+      "hide": "Hide password",
+      "placeholder": "••••••••",
+      "toggleTooltip": "Show / hide password",
+      "requirements": {
+        "met": "Requirement met:",
+        "notMet": "Requirement not met:",
+        "minLength": "Minimum 8 characters",
+        "lowercase": "At least 1 lowercase letter (a–z)",
+        "uppercase": "At least 1 uppercase letter (A–Z)",
+        "symbol": "At least 1 symbol, such as ! or #"
+      }
+    },
+    "updates": {
+      "label": "Send me occasional product updates and announcements",
+      "hint": "Optional. You can unsubscribe at any time."
+    },
+    "submit": "Create account",
+    "submitting": "Creating account…",
+    "submittingAnnouncement": "Creating your account…",
+    "summary": {
+      "title": "Fix {count} error to create your account. | Fix {count} errors to create your account."
+    },
+    "serverError": "We couldn't create your account. Try again in a few moments.",
+    "existingAccount": "Already have an account? {link}.",
+    "signInLink": "Sign in"
+  },
+  "validation": {
+    "email": {
+      "required": "Enter your email address.",
+      "invalid": "Enter a valid email address, for example name{'@'}example.com."
+    },
+    "password": {
+      "required": "Enter a password.",
+      "weak": "Your password doesn't meet all the requirements."
+    }
+  },
+  "success": {
+    "pageTitle": "Your account is ready",
+    "heading": "Your account is ready",
+    "confirmation": "We sent a confirmation link to {email}. Open it to verify your email address.",
+    "updatesOptIn": "You will also receive occasional product updates and announcements.",
+    "continue": "Continue to dashboard",
+    "back": "Back to sign up"
+  },
+  "stub": {
+    "signIn": {
+      "pageTitle": "Sign in",
+      "heading": "Sign in",
+      "body": "Signing in is outside the scope of this demo."
+    },
+    "dashboard": {
+      "pageTitle": "Dashboard",
+      "heading": "Dashboard",
+      "body": "The dashboard is outside the scope of this demo."
+    },
+    "backToSignUp": "Back to sign up"
+  }
+}

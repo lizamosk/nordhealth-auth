@@ -1,0 +1,68 @@
+@import '@nordhealth/css/tailwind';
+
+/* Skip link: first in tab order, visible only on focus. Focus ring drawn with box-shadow, never outline. */
+.skip-link {
+  position: absolute;
+  inset-inline-start: 16px;
+  inset-block-start: -72px;
+  z-index: 10;
+  padding: 12px 16px;
+  background: var(--n-color-surface);
+  color: var(--n-color-text-link);
+  font-weight: var(--n-font-weight-active);
+  border-radius: var(--n-border-radius-s);
+  box-shadow: var(--n-box-shadow-popout);
+}
+
+.skip-link:focus {
+  inset-block-start: 12px;
+  outline: 2px solid transparent;
+  box-shadow:
+    0 0 0 2px var(--n-color-surface),
+    0 0 0 4px var(--n-color-accent);
+}
+
+body {
+  margin: 0;
+  background: var(--n-color-background);
+  color: var(--n-color-text);
+  font-family: var(--n-font-family);
+}
+
+main:focus,
+h1:focus {
+  outline: none;
+}
+
+/*!* The sign-up form deviates from Nord's default input border (--n-color-border-strong, about 1.7:1 on white)*/
+/*   to meet WCAG 1.4.11 (3:1 for UI components). Scoped to this app's forms only. *!*/
+/*.auth-form nord-input:not(:focus-within, [error]) {*/
+/*  !* Nord reads this variable first in its focus and error rules too, so it must not apply in those states,*/
+/*     or the focus ring stays grey instead of turning accent blue. *!*/
+/*  --n-input-border-color: var(--n-color-border-hover);*/
+/*}*/
+
+.auth-form {
+  /* nord-dark.css sets --n-color-text-error to #cb3a1d: 3.2:1 on the dark card, below the 4.5:1 AA minimum
+     for the 12px inline error text. The danger text token passes in both themes. */
+  --n-color-text-error: var(--n-color-text-danger);
+}
+
+/* Success check: a disc in the weak success tint, as in the design. */
+.success-icon {
+  display: grid;
+  place-items: center;
+  inline-size: var(--n-size-icon-xxl);
+  block-size: var(--n-size-icon-xxl);
+  border-radius: var(--n-border-radius-circle);
+  background: var(--n-color-status-success-weak);
+  color: var(--n-color-status-success);
+  box-shadow: 0 0 0 1px var(--n-color-border-success);
+}
+
+/* Forced colours (Windows high contrast): keep surfaces distinguishable. */
+@media (forced-colors: active) {
+  .success-icon {
+    border: 1px solid CanvasText;
+  }
+}

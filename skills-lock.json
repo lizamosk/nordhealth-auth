@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "nord-full": {
+      "source": "nordhealth.design",
+      "sourceType": "well-known",
+      "computedHash": "0caa931de0146c26ca499a35dc6d4b4c19ce10aa9c27075f5645a23cb5467379"
+    }
+  }
+}
