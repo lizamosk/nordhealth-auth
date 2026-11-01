@@ -14,6 +14,9 @@ npm install
 npm run dev          # http://localhost:3000
 ```
 
+To send the welcome email, copy `.env.example` to `.env` and fill in your EmailJS public key, service ID and template
+ID. Without them the app still works and just skips the email.
+
 | Script                                   | What it does                                                                                    |
 | ---------------------------------------- | ----------------------------------------------------------------------------------------------- |
 | `npm run build` / `generate` / `preview` | Production build, static SPA output, serve the build                                            |
@@ -35,6 +38,10 @@ npm run dev          # http://localhost:3000
   doesn't jump while the user is fixing fields.
 - **Sign-up request:** `app/services/auth.ts` is a mock that resolves after ~900ms. There is no backend. Replace the
   body and keep the signature. The password is never stored or passed to the success page.
+- **Welcome email:** before the success page shows, `app/services/email.ts` sends a "Registration completed!" email to
+  the entered address through EmailJS, with `public/coding-cat.jpg` attached (the EmailJS template needs a Variable
+  Attachment with the parameter name `cat_image`). It never fails the sign-up: if the keys are missing or the request fails, it
+  logs to the console and the success page shows anyway. The e2e build clears the keys so tests never send real email.
 - **Theme:** light by default, or the system setting; the "Dark theme" switch remembers the choice in `localStorage`
   (`mode`). Nord's `nord-dark.css` is inlined in `<head>` at build time, scoped to `html[data-theme="dark"]`, and a tiny
   script sets that attribute before first paint. Switching theme only flips the attribute: no download, no flash.

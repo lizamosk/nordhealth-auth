@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Overview
 
-Client-side only Nuxt 4 sign-up app (`ssr: false`) built on the Nord Design System web components (`<nord-*>`), vee-validate + zod, and `@nuxtjs/i18n`. `README.md` documents the design decisions and the deliberate deviations from Nord defaults; read it before changing styling or accessibility behavior. This directory (`nuxt-app/`) lives in the single `nordhealth-auth/` git repo, whose root also holds the Nord agent skill under `.agents/skills/nord-full`.
+Client-side only Nuxt 4 sign-up app (`ssr: false`) built on the Nord Design System web components (`<nord-*>`), vee-validate + zod, and `@nuxtjs/i18n`. `README.md` documents the design decisions and the deliberate deviations from Nord defaults; read it before changing styling or accessibility behavior. The repo root is the app; it also holds the Nord agent skill under `.agents/skills/nord-full`.
 
 ## Commands
 
@@ -42,7 +42,7 @@ npx playwright test tests/e2e/signup.spec.ts --project=desktop   # single e2e fi
 - `nord-icon` would fetch from nordcdn.net; every icon used must be registered locally in `app/plugins/nord-icons.client.ts`.
 - Always wrap `nord-button` text in a `<span>`; a bare text child makes Lit throw "ChildPart has no parentNode" when the label changes.
 - Nord forces slotted card headers to small font size with `!important`, so headings go in the card body.
-- For component APIs and tokens, use the `nord-full` skill (`.agents/skills/nord-full` in the parent folder) instead of guessing.
+- For component APIs and tokens, use the `nord-full` skill (`.agents/skills/nord-full`) instead of guessing.
 
 ## Testing notes
 

@@ -1,3 +1,5 @@
+import { sendWelcomeEmail } from '~/services/email'
+
 export interface SignUpPayload {
   email: string
   password: string
@@ -11,5 +13,6 @@ export interface SignUpResult {
 
 export async function signUp(payload: SignUpPayload, latencyMs = 900): Promise<SignUpResult> {
   await new Promise((resolve) => setTimeout(resolve, latencyMs))
+  await sendWelcomeEmail(payload.email)
   return { email: payload.email, updates: payload.updates }
 }

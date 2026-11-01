@@ -22,6 +22,7 @@
     "test:e2e": "playwright test"
   },
   "dependencies": {
+    "@emailjs/browser": "^5.0.3",
     "@nordhealth/components": "^5.4.4",
     "@nordhealth/css": "^5.3.0",
     "@nordhealth/fonts": "^3.0.4",
@@ -31,6 +32,7 @@
     "@nuxtjs/i18n": "^10.6.0",
     "@tailwindcss/vite": "^4.3.3",
     "@vee-validate/zod": "^4.15.1",
+    "email-js": "^2.0.3",
     "nuxt": "^4.6.3",
     "tailwindcss": "^4.3.3",
     "vee-validate": "^4.15.1",

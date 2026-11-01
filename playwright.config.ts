@@ -24,5 +24,7 @@ export default defineConfig({
     url: `http://localhost:${PORT}`,
     reuseExistingServer: !process.env.CI,
     timeout: 240_000,
+    // Build without EmailJS keys so test runs never send real emails. Existing env vars beat the ones in .env.
+    env: { VITE_EMAILJS_PUBLIC_KEY: '' },
   },
 })
