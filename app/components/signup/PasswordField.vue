@@ -40,6 +40,7 @@ defineExpose({ focus: () => input.value?.focus() })
     :id="id"
     ref="input"
     v-model="model"
+    data-qa="qa-signup-password"
     :label="t('signUp.password.label')"
     :placeholder="t('signUp.password.placeholder')"
     :error="error"
@@ -55,6 +56,7 @@ defineExpose({ focus: () => input.value?.focus() })
   >
     <nord-button
       slot="end"
+      data-qa="qa-password-toggle"
       type="button"
       variant="plain"
       square
@@ -74,6 +76,9 @@ defineExpose({ focus: () => input.value?.focus() })
       <li
         v-for="requirement in passwordRequirements"
         :key="requirement.id"
+        data-qa="qa-password-requirement"
+        :data-requirement="requirement.id"
+        :data-met="requirement.met"
         class="n:flex n:items-center n:gap-2 n:text-m n:text-weak"
       >
         <nord-icon

@@ -22,7 +22,14 @@ defineExpose({ focus: () => banner.value?.focus() })
 </script>
 
 <template>
-  <nord-banner ref="banner" variant="danger" tabindex="-1" role="group" :aria-labelledby="titleId">
+  <nord-banner
+    ref="banner"
+    data-qa="qa-error-summary"
+    variant="danger"
+    tabindex="-1"
+    role="group"
+    :aria-labelledby="titleId"
+  >
     <p :id="titleId" class="n:m-0 n:font-heading">{{ title }}</p>
     <ul v-if="items?.length" class="n:m-0 n:mbs-1 n:list-disc n:ps-4">
       <li v-for="item in items" :key="item.field">

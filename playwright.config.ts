@@ -1,18 +1,29 @@
 import { defineConfig, devices } from '@playwright/test'
+import { defineBddConfig } from 'playwright-bdd'
 
 const PORT = 3200
 
+// Gherkin features are the test source; bddgen compiles them into Playwright specs in .features-gen.
+const testDir = defineBddConfig({
+  features: 'tests/e2e/features/**/*.feature',
+  steps: 'tests/e2e/src/**/*.ts',
+  outputDir: '.features-gen',
+})
+
 export default defineConfig({
-  testDir: 'tests/e2e',
+  testDir,
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
-  reporter: process.env.CI ? 'github' : 'list',
+  reporter: process.env.CI ? 'github' : [['list'], ['html', { open: 'never' }]],
   use: {
     baseURL: `http://localhost:${PORT}`,
     trace: 'on-first-retry',
+    screenshot: 'only-on-failure',
     // Tests that need dark mode opt in explicitly.
     colorScheme: 'light',
+    // QA hooks in the templates: data-qa="qa-…", located with getByTestId.
+    testIdAttribute: 'data-qa',
   },
   projects: [
     { name: 'desktop', use: { ...devices['Desktop Chrome'] } },

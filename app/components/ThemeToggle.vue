@@ -10,5 +10,5 @@ function onChange(event: Event) {
 </script>
 
 <template>
-  <nord-toggle :label="t('theme.toggle')" :checked="isDark" @change="onChange" />
+  <nord-toggle data-qa="qa-theme-toggle" :label="t('theme.toggle')" :checked="isDark" @change="onChange" />
 </template>

@@ -57,12 +57,19 @@ function focusField(field: SignUpField) {
         {{ t('signUp.heading') }}
       </h1>
 
-      <form class="auth-form" novalidate aria-labelledby="signup-heading" @submit.prevent="onSubmit">
+      <form
+        data-qa="qa-signup-form"
+        class="auth-form"
+        novalidate
+        aria-labelledby="signup-heading"
+        @submit.prevent="onSubmit"
+      >
         <nord-stack gap="l">
           <nord-input
             id="signup-email"
             ref="emailInput"
             v-model="email"
+            data-qa="qa-signup-email"
             v-bind="emailAttrs"
             :label="t('signUp.email.label')"
             :placeholder="t('signUp.email.placeholder')"
@@ -88,13 +95,22 @@ function focusField(field: SignUpField) {
             v-model="updates"
             type="checkbox"
             name="updates"
+            data-qa="qa-signup-updates"
             size="l"
             :label="t('signUp.updates.label')"
             :hint="t('signUp.updates.hint')"
             hint-below
           />
 
-          <nord-button type="submit" variant="primary" size="l" expand :loading="isSubmitting" :disabled="isSubmitting">
+          <nord-button
+            data-qa="qa-signup-submit"
+            type="submit"
+            variant="primary"
+            size="l"
+            expand
+            :loading="isSubmitting"
+            :disabled="isSubmitting"
+          >
             <span>{{ isSubmitting ? t('signUp.submitting') : t('signUp.submit') }}</span>
           </nord-button>
         </nord-stack>
@@ -108,7 +124,9 @@ function focusField(field: SignUpField) {
     <nord-card class="n:text-center">
       <i18n-t keypath="signUp.existingAccount" tag="span" scope="global">
         <template #link>
-          <NuxtLink to="/sign-in" class="n:text-link n:underline">{{ t('signUp.signInLink') }}</NuxtLink>
+          <NuxtLink to="/sign-in" data-qa="qa-signup-sign-in" class="n:text-link n:underline">
+            {{ t('signUp.signInLink') }}
+          </NuxtLink>
         </template>
       </i18n-t>
     </nord-card>

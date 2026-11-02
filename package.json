@@ -19,7 +19,10 @@
     "typecheck": "nuxt typecheck",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:e2e": "playwright test"
+    "test:e2e": "bddgen && playwright test",
+    "test:e2e:ui": "bddgen && playwright test --ui",
+    "test:e2e:a11y": "bddgen && playwright test --grep @a11y",
+    "test:e2e:report": "playwright show-report"
   },
   "dependencies": {
     "@emailjs/browser": "^5.0.3",
@@ -50,6 +53,7 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.7",
     "happy-dom": "^21.0.4",
+    "playwright-bdd": "^9.2.1",
     "prettier": "^3.9.10",
     "typescript": "^6.0.3",
     "vitest": "^4.1.12",

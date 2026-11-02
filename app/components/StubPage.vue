@@ -14,11 +14,13 @@ useHead({ title: () => t(`stub.${props.name}.pageTitle`) })
   <nord-card padding="l">
     <nord-stack gap="l">
       <nord-stack gap="s">
-        <h1 class="n:m-0 n:text-xxl n:font-heading n:leading-heading">{{ t(`stub.${name}.heading`) }}</h1>
+        <h1 data-qa="qa-stub-heading" class="n:m-0 n:text-xxl n:font-heading n:leading-heading">
+          {{ t(`stub.${name}.heading`) }}
+        </h1>
         <p class="n:m-0 n:text-l n:text-weak">{{ t(`stub.${name}.body`) }}</p>
       </nord-stack>
       <NuxtLink v-slot="{ href, navigate }" to="/" custom>
-        <nord-button size="l" expand :href="href ?? undefined" @click="navigate">
+        <nord-button data-qa="qa-stub-back" size="l" expand :href="href ?? undefined" @click="navigate">
           <span>{{ t('stub.backToSignUp') }}</span>
         </nord-button>
       </NuxtLink>
