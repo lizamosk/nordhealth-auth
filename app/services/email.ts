@@ -17,8 +17,8 @@ export async function sendWelcomeEmail(toEmail: string): Promise<void> {
       VITE_EMAILJS_SERVICE_ID,
       VITE_EMAILJS_TEMPLATE_ID,
       {
-        subject: 'NordHealth Assignment: Validate your email',
-        from_name: 'Liza NordHealth Assignment',
+        subject: 'Nordhealth Assignment: Validate your email',
+        from_name: 'Liza Nordhealth Assignment',
         from_email: 'limoskk.social@gmail.com',
         message: 'I hope you like the app! Have a nice day.',
         email: toEmail,
