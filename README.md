@@ -47,7 +47,7 @@ ID. Without them the app still works and just skips the email.
 - **Welcome email:** before the success page shows, `app/services/email.ts` sends a welcome email to the entered
   address through EmailJS. It never fails the sign-up: if the keys are missing or the request fails, it logs to the
   console and the success page shows anyway. The e2e build clears the keys so tests never send real email.
-  **Important:** for security purposes email functionality is removed from deployment. If you want to test it, please write me and I will add environment keys.
+  **Important:** for security purposes email functionality is removed from deployment. If you want to test it, please write me and I will add environment keys.  
   <img width="495" height="319" alt="Снимок экрана — 2026-11-02 в 11 24 26" src="https://github.com/user-attachments/assets/f4195bbc-2447-4bfc-9abe-530033809b4b" />
 - **Theme:** light by default, or the system setting; the "Dark theme" switch remembers the choice in `localStorage`
   (`mode`). Nord's `nord-dark.css` is inlined in `<head>` at build time, scoped to `html[data-theme="dark"]`, and a tiny
