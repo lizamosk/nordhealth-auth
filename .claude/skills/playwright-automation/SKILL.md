@@ -1,3 +1,8 @@
+---
+name: playwright-automation
+description: Senior QA Automation guidance for writing or changing Playwright tests. Investigate the existing project first, choose the right test level, follow repo conventions, and handle secrets safely.
+---
+
 # QA Automation & Claude Behaviour
 
 ## Role
