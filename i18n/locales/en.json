@@ -29,8 +29,8 @@
       }
     },
     "updates": {
-      "label": "Send me occasional product updates and announcements",
-      "hint": "Optional. You can unsubscribe at any time."
+      "label": "Email me occasional product updates (optional)",
+      "hint": "Unsubscribe anytime."
     },
     "submit": "Create account",
     "submitting": "Creating account…",
